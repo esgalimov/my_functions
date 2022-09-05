@@ -104,7 +104,7 @@ void my_strdup_test(void)
 void my_getline_test(void)
     {
     char * line = NULL;
-    size_t n = 3;
+    size_t n = 0;
     size_t read_bytes = 0;
     FILE * fp = NULL;
 

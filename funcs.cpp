@@ -135,10 +135,15 @@ size_t my_getline(char ** string, size_t * n, FILE * stream)
         len++;
         ch = getc(stream);
         }
+    if (*n == 0)
+        {
+            *string = (char *) calloc(len + 1, sizeof(char));
+            *n = len;
+        }
 
     if (len > *n)
         {
-        *string = (char *) realloc(*string, len + 10);
+        *string = (char *) realloc(*string, len + 1);
         *n = len;
         }
 
